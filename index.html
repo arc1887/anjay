@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jumpscare</title>
+    <title>Anjay</title>
     <style>
         body {
             margin: 0;
@@ -23,11 +23,23 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: none; /* Sembunyikan video awalnya */
+        }
+        button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Klik Ini!!!?!</h1>
+    <h1>Klik di tombol untuk memulai jumpscare!</h1>
+    <button id="startButton">Klik ini!?!!!!</button>
     <video id="jumpscare" loop>
         <source src="https://cdn.videy.co/Hw7EUn4J1.mp4" type="video/mp4">
         Browser Anda tidak mendukung video.
@@ -35,8 +47,11 @@
 
     <script>
         const video = document.getElementById('jumpscare');
-        document.body.addEventListener('click', function() {
-            video.play();
+        const button = document.getElementById('startButton');
+
+        button.addEventListener('click', function() {
+            video.style.display = 'block'; // Tampilkan video saat tombol diklik
+            video.play(); // Putar video
         });
     </script>
 </body>
