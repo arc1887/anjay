@@ -8,6 +8,13 @@
         body {
             margin: 0;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            flex-direction: column;
         }
         video {
             position: fixed;
@@ -20,9 +27,17 @@
     </style>
 </head>
 <body>
-    <video id="jumpscare" autoplay loop>
+    <h1>Klik Ini!!!?!</h1>
+    <video id="jumpscare" loop>
         <source src="https://cdn.videy.co/Hw7EUn4J1.mp4" type="video/mp4">
-        Ur browser doesnt support video.
+        Browser Anda tidak mendukung video.
     </video>
+
+    <script>
+        const video = document.getElementById('jumpscare');
+        document.body.addEventListener('click', function() {
+            video.play();
+        });
+    </script>
 </body>
 </html>
